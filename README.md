@@ -34,8 +34,10 @@ publishDateForDisplay(Promise.resolve(date1)).then(formatted1 =>
 {fulfilled: ['2024-11-19', 'unpublished']}
 ```
 
+### 20.10.22
+Catching promises
 ```
-
 Promise.catch(reason =>  {
     throw new Error(reason.message)
   });
+```
