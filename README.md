@@ -41,3 +41,16 @@ Promise.catch(reason =>  {
     throw new Error(reason.message)
   });
 ```
+
+```
+let savedResolve;
+
+const promise = new Promise(resolve => { savedResolve = resolve; });
+
+/* The `savedResolve` variable now contains the function that we got from the
+ * `new Promise` constructor. Calling it will fulfill the promise, even
+ * though it now looks like "savedResolve" and "promise" are unrelated. */
+savedResolve(3);
+
+promise;
+```
