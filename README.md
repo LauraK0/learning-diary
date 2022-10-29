@@ -64,6 +64,8 @@ savedResolve(5);
 promise;
 ```
 
+This code's rejection reason is an object with a message property. Add a catch to catch the rejection, then re-throw a proper Error that contains the message.
+
 ```
 const promise = Promise.reject({message: 'it failed'});
 promise.catch(reason => {throw new Error(reason.message);
