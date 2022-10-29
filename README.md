@@ -54,3 +54,12 @@ savedResolve(3);
 
 promise;
 ```
+### 29.10.22
+Assigning a promise constructor's resolve function to a variable.
+
+```
+let savedResolve;
+const promise = new Promise(resolve => { savedResolve = reslove; });
+savedResolve(5);
+promise;
+```
