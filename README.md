@@ -63,3 +63,8 @@ const promise = new Promise(resolve => { savedResolve = reslove; });
 savedResolve(5);
 promise;
 ```
+
+```
+const promise = Promise.reject({message: 'it failed'});
+promise.catch(reason => {throw new Error(reason.message);
+});
