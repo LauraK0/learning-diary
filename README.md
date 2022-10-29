@@ -81,13 +81,10 @@ function fulfilledValues(promises) {
     .map(result => result.value);
     });
 }
-
 fulfilledValues([
   Promise.resolve('Amir'),
   Promise.reject(new Error("User doesn't exist")),
   Promise.resolve('Cindy'),
 ]);
-
-
 {fulfilled: ['Amir', 'Cindy']}
 ```
