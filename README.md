@@ -70,3 +70,24 @@ This code's rejection reason is an object with a message property. Add a catch t
 const promise = Promise.reject({message: 'it failed'});
 promise.catch(reason => {throw new Error(reason.message);
 });
+
+fulfilledValues function takes a promises array as an argument and returns an array of the fulfilled values from the promises. Rejected promises are ignored, since they don't have a fulfilled value.
+
+```
+function fulfilledValues(promises) {
+  return Promise.allSettled(promises).then(results => {
+  return results
+    .filter(result => result.status === 'fulfilled'
+    .map(result => result.value);
+    });
+}
+
+fulfilledValues([
+  Promise.resolve('Amir'),
+  Promise.reject(new Error("User doesn't exist")),
+  Promise.resolve('Cindy'),
+]);
+
+
+{fulfilled: ['Amir', 'Cindy']}
+```
