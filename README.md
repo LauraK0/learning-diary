@@ -73,7 +73,6 @@ promise.catch(reason => {throw new Error(reason.message);
 
 fulfilledValues function takes a promises array as an argument and returns an array of the fulfilled values from the promises. Rejected promises are ignored, since they don't have a fulfilled value.
 
-```
 function fulfilledValues(promises) {
   return Promise.allSettled(promises).then(results => {
   return results
@@ -81,8 +80,7 @@ function fulfilledValues(promises) {
     .map(result => result.value);
     });
 }
-```
-```
+
 fulfilledValues([
   Promise.resolve('Amir'),
   Promise.reject(new Error("User doesn't exist")),
@@ -93,6 +91,7 @@ fulfilledValues([
 
 ### 30.10.22
 
+sleep(ms) function. This function uses the promise constructor (new Promise) to return a promise that resolves after the specified number of milliseconds. Inside the promise, setTimeout delays calling the resolve function.
 ```
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
