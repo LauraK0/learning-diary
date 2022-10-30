@@ -81,10 +81,20 @@ function fulfilledValues(promises) {
     .map(result => result.value);
     });
 }
+```
+```
 fulfilledValues([
   Promise.resolve('Amir'),
   Promise.reject(new Error("User doesn't exist")),
   Promise.resolve('Cindy'),
 ]);
 {fulfilled: ['Amir', 'Cindy']}
+```
+
+### 30.10.22
+
+```
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 ```
