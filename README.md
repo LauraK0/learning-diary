@@ -34,6 +34,30 @@ publishDateForDisplay(Promise.resolve(date1)).then(formatted1 =>
 {fulfilled: ['2024-11-19', 'unpublished']}
 ```
 
+### 23.10.22
+```
+const array = []
+array.push(‘before’);
+
+const promise1 = Promise.resolve(‘this value is ignored’);
+const promise2 =promise1.then(() => {
+array.push(‘then’);
+});
+promise.then(() => {
+array.push(‘after’);
+return array;
+});
+```
+
+```
+Function findUser(id) {
+	const = users.find( u => u.id === id);
+if (user === undefined) {
+	return Promise.reject(new Error(‘user does not exist’));
+} else {
+return user;
+}
+```
 ### 24.10.22
 Catching promises
 ```
