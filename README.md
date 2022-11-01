@@ -40,12 +40,13 @@ const array = []
 array.push(‘before’);
 
 const promise1 = Promise.resolve(‘this value is ignored’);
-const promise2 =promise1.then(() => {
-array.push(‘then’);
+const promise2 = promise1.then(() => {
+	array.push(‘then’);
 });
-promise.then(() => {
-array.push(‘after’);
-return array;
+
+promise2.then(() => {
+	array.push(‘after’);
+	return array;
 });
 ```
 
