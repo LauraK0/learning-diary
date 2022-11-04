@@ -117,11 +117,12 @@ fulfilledValues([
 ### 30.10.22
 
 sleep(ms) function. This function uses the promise constructor (new Promise) to return a promise that resolves after the specified number of milliseconds. Inside the promise, setTimeout delays calling the resolve function.
+
 ```
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
-
+```
 
 ### 04.11.22
 
