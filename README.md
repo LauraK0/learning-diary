@@ -121,4 +121,19 @@ sleep(ms) function. This function uses the promise constructor (new Promise) to 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
-```
+
+
+### 04.11.22
+
+There are two isNaNs and that one of them is preferable
+Preferred:
+'''
+Number.isNaN(undefined);
+// false
+'''
+A design mistake in Javascript:
+'''
+> isNaN(undefined);
+// true
+'''
+
