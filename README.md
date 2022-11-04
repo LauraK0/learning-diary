@@ -128,13 +128,15 @@ function sleep(ms) {
 
 There are two isNaNs and that one of them is preferable
 Preferred:
-'''
+
+```
 Number.isNaN(undefined);
 // false
-'''
+```
 A design mistake in Javascript:
-'''
+
+```
 > isNaN(undefined);
 // true
-'''
+```
 
