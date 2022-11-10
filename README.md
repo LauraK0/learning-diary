@@ -140,3 +140,22 @@ A design mistake in Javascript:
 // true
 ```
 
+### 10.11.22
+
+Function that takes a user and returns a login count object for this user, mapping their name to their loginCount. Uses a computed property to construct the object.
+
+```
+const users = [
+  {name: 'Amir', loginCount: 5},
+  {name: 'Betty', loginCount: 16},
+];
+
+function loginCount(user) {
+	return {[user.name]: user.loginCount};
+}
+
+[
+  loginCount(users[0]),
+  loginCount(users[1]),
+];
+```
