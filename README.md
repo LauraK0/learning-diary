@@ -163,6 +163,7 @@ function loginCount(user) {
 
 ### 13.11.22
 
+#### Sets
 Using large sets is quicker and more efficient than using large arrays. Sets can be used to check if an array has duplicates. These two functions uses a set to decide whether an array of numbers has any duplicates. It returns true if there are duplicates; otherwise it return falses.
 
 ```
@@ -182,3 +183,26 @@ function hasDuplicates(numbers) {
 		return false;
 	}
 ```
+#### Safe Integers
+```
+function safeIntegerMultiply(x, y) {
+  let array = []
+  let check =x*y;
+  if (Number.isSafeInteger(check) === true) {
+    return check;
+  }
+  else {
+    throw new Error('Product is an unsafe integer')
+  }
+}
+```
+Does the same as:
+
+```
+function safeIntegerMultiply(x, y) {
+	const product = x * y;
+	if (!Numebr.isSafeInteger(product)) {
+		throw new Error('Product is an unsafe integer');
+	}
+	return product;
+}
