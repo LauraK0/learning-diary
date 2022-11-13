@@ -159,3 +159,26 @@ function loginCount(user) {
   loginCount(users[1]),
 ];
 ```
+
+
+### 13.11.22
+
+Using large sets is quicker and more efficient than using large arrays. Sets can be used to check if an array has duplicates. These two functions uses a set to decide whether an array of numbers has any duplicates. It returns true if there are duplicates; otherwise it return falses.
+
+```
+function hasDuplicates(numbers) {
+  return (new Set(numbers)).size !== numbers.length;
+}
+```
+```
+function hasDuplicates(numbers) {
+	const set = new Set();
+	for (const n of numbers) {
+		if (set.has(n)) {
+			return true;
+			}
+			set.add(n);
+		}
+		return false;
+	}
+```
