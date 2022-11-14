@@ -206,10 +206,14 @@ function safeIntegerMultiply(x, y) {
 	}
 	return product;
 }
+```
 
 ### 14.11.22
 
 #### Extending classes
+
+Class that inherits from User. Its constructor calls super, passing along the relevant arguments. It also sets the admin's isAdmin flag to true
+
 ```
 class User {
   constructor(name, email) {
