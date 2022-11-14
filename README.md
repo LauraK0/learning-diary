@@ -206,3 +206,26 @@ function safeIntegerMultiply(x, y) {
 	}
 	return product;
 }
+
+### 14.11.22
+
+#### Extending classes
+```
+class User {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+    this.isAdmin = false;
+  }
+}
+
+class Admin extends User {
+   constructor(name, email, isAdmin) {
+    super(name, email, isAdmin);
+      this.isAdmin = true;
+  }
+}
+
+const admin = new Admin('Amir', 'amir@example.com');
+[admin.name, admin.email, admin.isAdmin];
+```
