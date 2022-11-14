@@ -201,7 +201,7 @@ Does the same as:
 ```
 function safeIntegerMultiply(x, y) {
 	const product = x * y;
-	if (!Numebr.isSafeInteger(product)) {
+	if (!Number.isSafeInteger(product)) {
 		throw new Error('Product is an unsafe integer');
 	}
 	return product;
