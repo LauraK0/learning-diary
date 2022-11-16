@@ -243,3 +243,25 @@ There are several ways an external script can be executed:
 - If defer is present (and not async): The script is downloaded in parallel to parsing the page, and executed after the page has finished parsing
 - If neither async or defer is present: The script is downloaded and executed immediately, blocking parsing until the script is completed
 
+#### Anonymous and inline classes
+Defines an anonymous rectangle class inside of an array. Constructor takes width and height arguments and has an area method that returns the rectangle's area (the width times the height). 
+
+```
+const classes = [
+	class {
+		constructor(width, height) {
+		this.width = width;
+		this.height = height;
+		}
+		
+		area() {
+		return this.width * this.height;
+		}
+	}
+];
+
+const Rectangle = classes[0];
+const rectangle = new Rectangle(3,4);
+[rectangle.area(), classes[0].name];
+```
+
