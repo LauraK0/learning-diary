@@ -233,3 +233,13 @@ class Admin extends User {
 const admin = new Admin('Amir', 'amir@example.com');
 [admin.name, admin.email, admin.isAdmin];
 ```
+### 16/11/22
+
+#### Defer
+The defer attribute is a boolean attribute. If the defer attribute is set, it specifies that the script is downloaded in parallel to parsing the page, and executed after the page has finished parsing.
+
+There are several ways an external script can be executed:
+- If async is present: The script is downloaded in parallel to parsing the page, and executed as soon as it is available (before parsing completes)
+- If defer is present (and not async): The script is downloaded in parallel to parsing the page, and executed after the page has finished parsing
+- If neither async or defer is present: The script is downloaded and executed immediately, blocking parsing until the script is completed
+
