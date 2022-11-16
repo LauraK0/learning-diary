@@ -265,3 +265,24 @@ const rectangle = new Rectangle(3,4);
 [rectangle.area(), classes[0].name];
 ```
 
+#### Accessor properties on classes
+
+```
+class User {
+  constructor(name) {
+     this.names = [name];
+  }
+  
+  set name(newName) {
+    this.names.push(newName);
+  }
+  
+const user = new User('Amir');
+const names1 = user.names.slice();
+user.name = 'Betty';
+const names2 = user.names.slice();
+({names1, names2});
+}
+
+returns 
+{names1: ['Amir'], names2: ['Amir', 'Betty']}
