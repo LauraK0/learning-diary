@@ -276,6 +276,7 @@ class User {
   set name(newName) {
     this.names.push(newName);
   }
+}
   
 const user = new User('Amir');
 const names1 = user.names.slice();
@@ -286,3 +287,15 @@ const names2 = user.names.slice();
 
 returns 
 {names1: ['Amir'], names2: ['Amir', 'Betty']}
+```
+
+### 18/11/22
+
+#### Set unions
+General purpose function to unite sets.
+
+```
+function setUnion(setA, setB) {
+	return new Set([...setA,...set`B]);
+}
+```
