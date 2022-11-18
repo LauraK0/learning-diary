@@ -299,3 +299,11 @@ function setUnion(setA, setB) {
 	return new Set([...setA,...set`B]);
 }
 ```
+General purpose function to find intersection of sets.
+```
+function setIntersection(set1, set2) {
+  return new Set(
+  Array.from(set1).filter(n => set2.has(n))
+);
+}
+```
