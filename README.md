@@ -307,3 +307,45 @@ function setIntersection(set1, set2) {
 );
 }
 ```
+
+## 26/12/22
+
+```
+class SocialGraph {
+  constructor() {
+    this.map = new Map();
+  }
+
+  addFollow(user1, user2) {
+    if (!this.map.has(user2)) {
+      this.map.set(user2, []);
+    }
+    this.map.get(user2).push(user1);
+  }
+
+  follows(user1, user2) {
+    if (this.map.has(user2)) {
+      return this.map.get(user2).includes(user1);
+    }
+  return false;
+  }
+}
+
+const socialGraph = new SocialGraph();
+socialGraph.addFollow('amir', 'betty');
+socialGraph.addFollow('amir', 'cindy');
+socialGraph.addFollow('betty', 'cindy');
+
+[
+  socialGraph.follows('amir', 'betty'),
+  socialGraph.follows('amir', 'cindy'),
+  socialGraph.follows('betty', 'amir'),
+  socialGraph.follows('betty', 'cindy'),
+  socialGraph.follows('cindy', 'amir'),
+  socialGraph.follows('cindy', 'betty'),
+];
+
+
+[true, true, false, true, false, false]
+```
+
