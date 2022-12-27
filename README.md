@@ -349,3 +349,13 @@ socialGraph.addFollow('betty', 'cindy');
 [true, true, false, true, false, false]
 ```
 
+## 27/12/22
+
+```
+function* powerOfTwo() {
+  let i = 1
+  while (true) {
+    yield i
+    i *= 2;
+}
+```
