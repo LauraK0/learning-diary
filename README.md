@@ -359,3 +359,13 @@ function* powerOfTwo() {
     i *= 2;
 }
 ```
+
+## 28.12.22
+
+```
+function* numbersInRange(min, max) {
+  for (let i=min; i<max; i++) {
+    yield i;
+  }
+}
+```
