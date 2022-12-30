@@ -5,7 +5,7 @@ Write a publishDateForDisplay function. Its job is to return the publish date fo
 
 publishDateForDisplay takes a date wrapped in a promise, like Promise.resolve(publishDate). If the date is undefined, it should return the string 'unpublished'. Otherwise it should return the result of formatDate(publishDate).
 
-```
+```javascript
 function formatDate(date) {
   // Turn the date object into a string like '2024-11-19'
   return [date.getFullYear(), date.getMonth() + 1, date.getDate()]
@@ -35,7 +35,7 @@ publishDateForDisplay(Promise.resolve(date1)).then(formatted1 =>
 ```
 
 ### 23.10.22
-```
+```javascript
 const array = []
 array.push(‘before’);
 
@@ -50,7 +50,7 @@ promise2.then(() => {
 });
 ```
 
-```
+```javascript
 Function findUser(id) {
 	const = users.find( u => u.id === id);
 if (user === undefined) {
@@ -59,15 +59,17 @@ if (user === undefined) {
 return user;
 }
 ```
+
 ### 24.10.22
+
 Catching promises
-```
+```javascript
 Promise.catch(reason =>  {
     throw new Error(reason.message)
   });
 ```
 
-```
+```javascript
 let savedResolve;
 
 const promise = new Promise(resolve => { savedResolve = resolve; });
@@ -79,10 +81,11 @@ savedResolve(3);
 
 promise;
 ```
+
 ### 29.10.22
 Assigning a promise constructor's resolve function to a variable.
 
-```
+```javascript
 let savedResolve;
 const promise = new Promise(resolve => { savedResolve = reslove; });
 savedResolve(5);
@@ -91,7 +94,7 @@ promise;
 
 This code's rejection reason is an object with a message property. Add a catch to catch the rejection, then re-throw a proper Error that contains the message.
 
-```
+```javascript
 const promise = Promise.reject({message: 'it failed'});
 promise.catch(reason => {throw new Error(reason.message);
 });
@@ -118,7 +121,7 @@ fulfilledValues([
 
 sleep(ms) function. This function uses the promise constructor (new Promise) to return a promise that resolves after the specified number of milliseconds. Inside the promise, setTimeout delays calling the resolve function.
 
-```
+```javascript
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -129,13 +132,13 @@ function sleep(ms) {
 There are two isNaNs and that one of them is preferable
 Preferred:
 
-```
+```javascript
 Number.isNaN(undefined);
 // false
 ```
 A design mistake in Javascript:
 
-```
+```javascript
 > isNaN(undefined);
 // true
 ```
@@ -144,7 +147,7 @@ A design mistake in Javascript:
 
 Function that takes a user and returns a login count object for this user, mapping their name to their loginCount. Uses a computed property to construct the object.
 
-```
+```javascript
 const users = [
   {name: 'Amir', loginCount: 5},
   {name: 'Betty', loginCount: 16},
@@ -166,12 +169,13 @@ function loginCount(user) {
 #### Sets
 Using large sets is quicker and more efficient than using large arrays. Sets can be used to check if an array has duplicates. These two functions uses a set to decide whether an array of numbers has any duplicates. It returns true if there are duplicates; otherwise it return falses.
 
-```
+```javascript
 function hasDuplicates(numbers) {
   return (new Set(numbers)).size !== numbers.length;
 }
 ```
-```
+
+```javascript
 function hasDuplicates(numbers) {
 	const set = new Set();
 	for (const n of numbers) {
@@ -184,7 +188,8 @@ function hasDuplicates(numbers) {
 	}
 ```
 #### Safe Integers
-```
+
+```javascript
 function safeIntegerMultiply(x, y) {
   let array = []
   let check =x*y;
@@ -198,7 +203,7 @@ function safeIntegerMultiply(x, y) {
 ```
 Does the same as:
 
-```
+```javascript
 function safeIntegerMultiply(x, y) {
 	const product = x * y;
 	if (!Number.isSafeInteger(product)) {
@@ -214,7 +219,7 @@ function safeIntegerMultiply(x, y) {
 
 Class that inherits from User. Its constructor calls super, passing along the relevant arguments. It also sets the admin's isAdmin flag to true
 
-```
+```javascript
 class User {
   constructor(name, email) {
     this.name = name;
@@ -246,7 +251,7 @@ There are several ways an external script can be executed:
 #### Anonymous and inline classes
 Defines an anonymous rectangle class inside of an array. Constructor takes width and height arguments and has an area method that returns the rectangle's area (the width times the height). 
 
-```
+```javascript
 const classes = [
 	class {
 		constructor(width, height) {
@@ -267,7 +272,7 @@ const rectangle = new Rectangle(3,4);
 
 #### Accessor properties on classes
 
-```
+```javascript
 class User {
   constructor(name) {
      this.names = [name];
@@ -294,13 +299,14 @@ returns
 #### Set unions
 General purpose function to unite sets.
 
-```
+```javascript
 function setUnion(setA, setB) {
 	return new Set([...setA,...set`B]);
 }
 ```
 General purpose function to find intersection of sets.
-```
+
+```javascript
 function setIntersection(set1, set2) {
   return new Set(
   Array.from(set1).filter(n => set2.has(n))
@@ -310,7 +316,7 @@ function setIntersection(set1, set2) {
 
 ## 26/12/22
 
-```
+```javascript
 class SocialGraph {
   constructor() {
     this.map = new Map();
@@ -351,7 +357,7 @@ socialGraph.addFollow('betty', 'cindy');
 
 ## 27/12/22
 
-```
+```javascript
 function* powerOfTwo() {
   let i = 1
   while (true) {
@@ -362,7 +368,7 @@ function* powerOfTwo() {
 
 ## 28.12.22
 
-```
+```javascript
 function* numbersInRange(min, max) {
   for (let i=min; i<max; i++) {
     yield i;
